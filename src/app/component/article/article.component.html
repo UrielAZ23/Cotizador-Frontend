@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="center container d-flex gap-5">
+    <section id="content">
+
+        <article class="article-item article-detail " style="width: 40rem;">
+            <div class="card card-img-top img-fluid" >
+      
+
+                    <img src="{{url+'get-image/'+article.image}}" alt="">
+        
+            </div>
+
+
+            
+  
+        </article>
+
+        
+    </section>
+    <app-sidebar
+    [article]="article"
+    ></app-sidebar>
+</div>
+<app-footer></app-footer>

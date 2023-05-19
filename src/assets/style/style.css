@@ -1,0 +1,11 @@
+*{
+    font-family:'Times New Roman', Times, serif;
+    font-size: medium;
+}
+.img-btn{
+    background-image: url("../img/letrag.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}

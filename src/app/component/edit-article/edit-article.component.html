@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<h3 class="text-center">Editar Articulos</h3>
+
+<div class="container text-center">
+   <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th class="col-1">Num</th>
+            <th class="col-1">Title</th>
+            <th class="col-3">Img</th>
+            <th class="col-1">Price</th>
+            <th class="col-1">Stock</th>
+            <th class="col-2">Content</th>
+            <th class="col-3">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let article of articles ; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{article.title}}</td>
+            <td><img src="{{url+'get-image/'+article.image}}" alt="" width="175px"></td>
+            <td>{{article.pricing}}</td>
+            <td>{{article.stock}}</td>
+            <td>{{article.content}}</td>
+            <td class="">
+                <a [routerLink]="['/edit-article/content/'+this.article._id+'/'+this.user]"  class="btn btn-warning fs-5 mx-2" type="button">Editar</a>
+                <button (click)="deleteArticle(article._id)" class="btn btn-danger fs-5 mx-2" type="button">Eliminar</button>
+            </td>
+            
+        </tr>
+    </tbody>
+    
+</table>
+<div class="text-end mx-5"> 
+    <a [routerLink]="['/new-article/'+this.user]" class="btn btn-success fs-5 mx-2" type="button">Agregar</a>
+
+</div>
+
+</div>
+
+<app-footer></app-footer>

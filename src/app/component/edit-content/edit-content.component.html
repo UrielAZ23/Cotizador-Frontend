@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class=" d-flex justify-content-center">
+    <form  #articleForm="ngForm" (ngSubmit)="onSubmit()" >
+        <div>
+            <img src="{{url+'get-image/'+article.image}}" width="250px" class="mt-3 mb-3" alt="">
+        </div>
+        <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" #Nombre="ngModel" [(ngModel)]="article.title">
+        </div>
+        <div class="mb-3">
+            <label for="pricing" class="form-label">Pricing</label>
+            <input type="number" class="form-control" min="0" name="pricing" #pricing="ngModel" [(ngModel)]="article.pricing" >
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">stock</label>
+            <input type="number" class="form-control" min="0"name="stock" #Stock="ngModel" [(ngModel)]="article.stock" >
+        </div>
+        <div class="mb-3">
+            <label for="contenedor" class="form-label">Conteiner</label>
+            <textarea class="form-control" name="contenedor" rows="3" #container="ngModel" [(ngModel)]="article.content"></textarea>
+        </div>
+
+
+ 
+
+
+              <angular-file-uploader 
+              [config]="afuConfig"
+              (ApiResponse)="imageUpload($event)">
+          
+        </angular-file-uploader>
+
+              <div class="text-center mt-5">
+                  <a  [routerLink]="['/edit-article/'+this.user]" class="btn btn-warning mx-2" >Regresar</a>
+                  <input type="submit" value="Guardar" class="btn btn-success" />
+              
+              </div>
+    </form>
+
+</div>
+
+<app-footer></app-footer>

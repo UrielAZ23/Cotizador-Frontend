@@ -1,0 +1,31 @@
+<app-header></app-header>    
+
+
+<div class=" container text-center" *ngIf="customers">
+
+    <table class="table">
+        <thead>
+          <tr class="">
+            <th class="col-1">id</th>
+            <th class="col-3">Name</th>
+            <th class="col-3">Password</th>
+            <th class="col-2">Date</th>
+            <th class="col-3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers ; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{customer.name}}</td>
+            <td>{{customer.password}}</td>
+            <td>{{customer.date | date:'short'}}</td>
+            <td>
+              <a [routerLink]="['/home/edit-customer/'+this.customer._id+'/'+this.user]" class="btn btn-warning fs-5 mx-2" type="button">Editar</a>
+              <button (click)="deleted(this.customer._id)"  class="btn btn-danger fs-5 mx-2" type="button">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+    <app-footer></app-footer>

@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container text-center">
+    <br>
+    <h2>Tabla de facturas</h2>
+    <hr>
+    <br>    
+    <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th scope="col" class="col-sm-1">#</th>
+            <th scope="col" class="col-sm-2">Customer</th>
+            <th scope="col" class="col-sm-3">account</th>
+            <th scope="col" class="col-sm-2">Status</th>
+            <th scope="col" class="col-sm-4">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let feature of features; let i = index ">
+            <th scope="row">{{i+1}}</th>
+            <td>{{feature.customer}}</td>
+            <td>{{feature.account}}</td>
+            <td *ngIf="feature.status==true">Activo</td>
+            <td *ngIf="feature.status==false">Pagado</td>
+            <td>
+                <div class="">
+                    <button class="btn btn-success fs-5 mx-2" type="button">Pagar</button>
+                    <button class="btn btn-warning fs-5 mx-2" type="button">Editar</button>
+                    <button class="btn btn-danger fs-5" type="button">Eliminar</button>
+
+                </div>
+
+            </td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+      
+      <!-- <div class="d-flex justify-content-end">
+        <button class="btn btn-success fs-5" type="button">Agregar</button>
+      </div> -->
+    </div>
+<app-footer></app-footer>
