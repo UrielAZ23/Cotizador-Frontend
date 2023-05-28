@@ -1,9 +1,10 @@
 <app-header></app-header>
 
-<div class=" d-flex justify-content-center">
+<div *ngIf="!article.image"></div>
+<div *ngIf="article" class=" d-flex justify-content-center">
     <form  #articleForm="ngForm" (ngSubmit)="onSubmit()" >
-        <div>
-            <img src="{{url+'get-image/'+article.image}}" width="250px" class="mt-3 mb-3" alt="">
+        <div >
+            <img  src="{{url}}get-image/{{article.image}}" width="250px" class="mt-3 mb-3" alt="">
         </div>
         <div class="mb-3">
             <label for="Nombre" class="form-label">Nombre</label>

@@ -17,14 +17,22 @@
         <tbody>
           <tr *ngFor="let feature of features; let i = index ">
             <th scope="row">{{i+1}}</th>
-            <td>{{feature.customer}}</td>
+            <td >
+              <div *ngFor="let customer of customers">
+
+                <section *ngIf="customer._id==feature.customer">{{customer.name}}</section>
+              </div>
+            </td>
+                
+        
+            
+
             <td>{{feature.account}}</td>
             <td *ngIf="feature.status==true">Activo</td>
             <td *ngIf="feature.status==false">Pagado</td>
             <td>
                 <div class="">
-                    <button class="btn btn-success fs-5 mx-2" type="button">Pagar</button>
-                    <button class="btn btn-warning fs-5 mx-2" type="button">Editar</button>
+                    <button [routerLink]="['/features/edit-feature/'+this.user+'/'+feature._id]" class="btn btn-warning fs-5 mx-2" type="button">Editar</button>
                     <button class="btn btn-danger fs-5" type="button">Eliminar</button>
 
                 </div>

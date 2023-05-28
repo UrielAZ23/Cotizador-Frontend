@@ -1,10 +1,10 @@
 export class Feature{
 
     constructor(
-        _id:string,
-        customer:string,
-        account:string,
-        status:boolean
+        public _id:string,
+        public customer:string,
+        public account:number,
+        public status:boolean
     ){
 
     }

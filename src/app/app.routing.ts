@@ -12,6 +12,7 @@ import { NewCustomerComponent } from "./component/new-customer/new-customer.comp
 import { EditArticleComponent } from "./component/edit-article/edit-article.component";
 import { EditContentComponent } from "./component/edit-content/edit-content.component";
 import { EditCustomerComponent } from "./component/edit-customer/edit-customer.component";
+import { EditFeatureComponent } from "./component/edit-feature/edit-feature.component";
 
 
 const appRoutes:Routes=[
@@ -20,6 +21,7 @@ const appRoutes:Routes=[
     {path:'login', component:LoginComponent},
     {path:'customer', component:NewCustomerComponent},
     {path:'features/:user', component:FeaturesComponent},
+    {path:'features/edit-feature/:user/:idFeature', component:EditFeatureComponent},
     {path:'edit-article/:user', component:EditArticleComponent},
     {path:'pricing/:user', component:PricingComponent},
     {path:'new-article/:user', component:NewArticleComponent},

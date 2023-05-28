@@ -1,0 +1,67 @@
+<app-header></app-header>
+<div class="container text-center">
+    <h2 class=" text-center">Resumen Factura</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th class="col-1">Id</th>
+            <th class="col-2">Image</th>
+            <th class="col-2">Title</th>
+            <th class="col-1">stock</th>
+            <th class="col-1">Amount</th>
+            <th class="col-1">Cost</th>
+            <th class="col-1">Total</th>
+            <th class="col-3">Action</th>
+          </tr>
+        </thead>
+        <tbody >
+
+
+            <tr *ngFor="let resume of resumens ; let i = index">
+                
+                <th  scope="row">{{i+1}}</th>
+                <td>
+                    <div *ngFor="let article of articles">
+                        <section *ngIf="article._id==resume.idArticle">
+                            <img src="{{this.url}}get-image/{{article.image}}" alt="" width="120px">
+                        </section>
+                        
+                    </div>
+                    
+                </td>
+                
+                <td >
+                    <div *ngFor="let article of articles">
+                        <section *ngIf="article._id==resume.idArticle">
+                            {{article.title}}
+                        </section>
+                        
+                    </div>
+                </td>
+                <td >
+                    <div *ngFor="let article of articles">
+                        <section *ngIf="article._id==resume.idArticle">
+                            {{article.stock}} pza
+                        </section>
+    
+                    </div>
+                </td>
+                <td> <input type="number" min="0"  name="amount" #Amount="ngModel" [(ngModel)]="resume.amount" style="width: 50px; text-align: center;"> </td>
+                <td>${{resume.cost}}</td>                         
+                <td>$ {{resume.total}}</td>
+                <td>
+                    <button (click)="prueba(resume)" class="btn btn-warning fs-5 mx-2" type="button">Editar</button>
+                    <button (click)="eliminar(resume)" class="btn btn-danger fs-5 mx-2" type="button">Eliminar</button>
+                </td>
+            </tr>
+       
+            
+            
+        </tbody>
+        <tfoot>
+            <td colspan="6" class="text-end">Total</td>
+            <td *ngIf="feature">$ {{feature.account}}</td>
+        </tfoot>
+      </table>
+</div>
+<app-footer></app-footer>

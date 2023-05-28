@@ -27,6 +27,8 @@ import { EditArticleComponent } from './component/edit-article/edit-article.comp
 import { EditContentComponent } from './component/edit-content/edit-content.component';
 import { EditCustomerComponent } from './component/edit-customer/edit-customer.component';
 import { FeatureService } from './services/feature.service';
+import { ResumeService } from './services/resume.service';
+import { EditFeatureComponent } from './component/edit-feature/edit-feature.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { FeatureService } from './services/feature.service';
     NewCustomerComponent,
     EditArticleComponent,
     EditContentComponent,
-    EditCustomerComponent
+    EditCustomerComponent,
+    EditFeatureComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { FeatureService } from './services/feature.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [appRoutingProviders, ArticleService,CustomerService,FeatureService],
+  providers: [appRoutingProviders, ArticleService,CustomerService,FeatureService,ResumeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

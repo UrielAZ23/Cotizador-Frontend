@@ -28,4 +28,27 @@ export class FeatureService{
         return this._http.get(this.url+'getFeatures/'+last)
 
     }
+
+    getFeature(id:any):Observable<any>{
+        return this._http.get(this.url+'getFeature/'+id)
+
+    }
+
+    updateFeature(id:any,feature:any):Observable<any>{
+        let params = JSON.stringify(feature)
+        let headers = new HttpHeaders().set('Content-Type','application/json')
+        return this._http.put(this.url+'updateFeature/'+id,params,{headers:headers})
+
+    }
+
+    deteleFeature(id:any):Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','application/json')
+        return this._http.delete(this.url+'deleteFeature/'+id,{headers:headers})
+    }
+
+    searchFeature(feature):Observable<any>{
+        let params= JSON.stringify(feature)
+        let headers = new HttpHeaders().set('Content-Type','application/json')
+        return this._http.post(this.url+'searchFeature',params,{headers:headers})
+    }
 }

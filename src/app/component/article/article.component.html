@@ -6,7 +6,7 @@
             <div class="card card-img-top img-fluid" >
       
 
-                    <img src="{{url+'get-image/'+article.image}}" alt="">
+                    <img *ngIf="article" src="{{url+'get-image/'+article.image}}" alt="">
         
             </div>
 
